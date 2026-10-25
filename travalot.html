@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg">
+<title>One screen that shows where bookings leak — Travalot CRM</title>
+<meta name="description" content="A CRM dashboard that answers the three questions leadership asks every week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>body{margin:0}
+a{color:#111316}a:hover{color:#3b6fd8}
+.pill-dark{transition:transform .2s ease,background .2s ease}
+.pill-dark:hover{transform:translateY(-2px);background:#3b6fd8 !important;color:#ffffff !important}
+.ghost{transition:background .2s ease,color .2s ease}
+.ghost:hover{background:#111316;color:#ffffff !important}
+.prints .pr{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.prints:hover .p1{transform:rotate(-14deg) translate(-70px,8px) !important}
+.prints:hover .p2{transform:rotate(2deg) translate(0,-16px) !important}
+.prints:hover .p3{transform:rotate(15deg) translate(72px,10px) !important}
+.tab{transition:background .2s ease,color .2s ease}
+.nextcase{transition:background .25s ease}
+.nextcase:hover{background:#ece8f8}
+/* subtle reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #111316; padding: 14px; font-family: 'Inter Tight', system-ui, sans-serif; color: #111316; font-size: 17px; line-height: 1.6; overflow-x: clip">
+<div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px">
+
+<!-- HEADER -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; overflow: hidden">
+<nav style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 22px 32px; font-size: 15px">
+<a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #111316; font-weight: 500; font-size: 17px; letter-spacing: -0.01em">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: #111316; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">VM</span>Vennela Manmohan</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+<a href="index.html" style="color: #111316; text-decoration: none">Work</a>
+<a href="about.html" style="color: #111316; text-decoration: none">About</a>
+<a href="mailto:vennelamanmohan@gmail.com?subject=R%C3%A9sum%C3%A9%20request" style="color: #111316; text-decoration: none">Résumé</a>
+<a class="pill-dark" href="#contact" style="background: #111316; color: #ffffff; text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 500">Let's talk ↗</a>
+</div>
+</nav>
+<div style="padding: 48px 32px 40px; background: #dfeaf8">
+<a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #33363c; text-decoration: none">← ALL WORK</a>
+<div style="margin-top: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em">03 · TRAVALOT · INTERNAL TOOLS · 2025</div>
+<h1 style="margin: 14px 0 0; max-width: 18ch; font-weight: 300; font-size: clamp(44px, 6vw, 88px); line-height: 0.98; letter-spacing: -0.045em">One screen that shows where bookings leak</h1>
+<p style="margin: 22px 0 0; max-width: 58ch; font-size: 20px; color: #33363c">Travalot's CRM could tell the team what stage every booking was in. It couldn't tell leadership whether the business was getting better at selling, who was carrying it, or which money was about to slip. I designed the dashboard that answers those three questions.</p>
+<div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px">
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">ROLE</div><div style="margin-top: 4px; font-size: 15px">Product designer (freelance), acting PM</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">SCOPE</div><div style="margin-top: 4px; font-size: 15px">Brief to PRD, IA, dashboard, drill-downs, visual design</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">USERS</div><div style="margin-top: 4px; font-size: 15px">Founder, sales leadership, team leads in four cities</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">DELIVERED</div><div style="margin-top: 4px; font-size: 15px">3 tabs, ~12 drill-downs, metric definitions</div></div>
+</div>
+</div></section>
+
+<!-- BRIEF -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0"><h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">The brief</h2></div>
+<div style="flex: 3 1 620px; min-width: 0">
+<p style="margin: 0; color: #33363c">A Travalot booking changes hands many times: lead, quote, instalments, travel, review. The CRM let the team work inside one stage at a time, but nothing showed the whole picture — who's blocking a booking, who owns the next step, how much revenue is at risk. The founder framed it as five goals:</p>
+<div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 8px 16px; border-radius: 999px; background: #dfeaf8; font-size: 15px">Speed</span>
+<span style="padding: 8px 16px; border-radius: 999px; background: #dfeaf8; font-size: 15px">Control</span>
+<span style="padding: 8px 16px; border-radius: 999px; background: #dfeaf8; font-size: 15px">Clarity</span>
+<span style="padding: 8px 16px; border-radius: 999px; background: #dfeaf8; font-size: 15px">Accountability</span>
+<span style="padding: 8px 16px; border-radius: 999px; background: #dfeaf8; font-size: 15px">Learning</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- THE TURN (dark) -->
+<section class="reveal" style="background: #111316; color: #ffffff; border-radius: 28px; padding: 56px 32px; border: 1px solid #2a2c30">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #a3a6ad">THE TURN</div>
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px; margin-top: 10px">
+<div style="flex: 1.2 1 420px; min-width: 0">
+<h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3.4vw, 50px); line-height: 1.05; letter-spacing: -0.04em">"Are those 10 fulfilled trips from these 45 leads?"</h2>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; color: #c9cbd0">
+<p style="margin: 0">My first concept gave each role its own dashboard, centred on deals per stage. Walking through it, I asked myself that question — and they weren't the same group. The 45 leads were this month's enquiries; the 10 trips were booked months earlier.</p>
+<p style="margin: 14px 0 0">"22% conversion" compared two different groups and described no one. Conversion moved to period comparison, and the dashboard was reorganised around leadership's questions instead of job titles.</p>
+</div>
+</div>
+<div style="margin-top: 32px; border-radius: 20px; overflow: hidden; background: #f4f2ee"><img src="images/84783ef204a348868b8dd74d0dfe6068.png" alt="Before: a snapshot that implied 22% conversion. After: each stage compared with the previous month." style="width: 100%; display: block"></div>
+</section>
+
+<!-- PM -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">NO PM ON THE PROJECT</div>
+<h2 style="margin: 8px 0 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">From brief to PRD</h2>
+</div>
+<div style="flex: 3 1 620px; min-width: 0">
+<p style="margin: 0; color: #33363c">Before designing screens, I turned the brief into a one-page PRD the founder and developers could sign off.</p>
+<div style="margin-top: 20px; background: #f4f2ee; border-radius: 18px; padding: 22px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">PROBLEM STATEMENT</div>
+<div style="margin-top: 8px; font-weight: 300; font-size: clamp(20px, 1.8vw, 26px); line-height: 1.3; letter-spacing: -0.02em">Leadership can't see, in one place, whether sales are improving, who's driving them, or which bookings and payments are slipping.</div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">Agreeing what the numbers mean</h3>
+<p style="margin: 10px 0 0; color: #33363c">I defined every metric before drawing a chart, so everyone would read a number the same way.</p>
+<div style="margin-top: 16px; border-top: 1px solid #111316; font-size: 15px">
+<div style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #eceae5"><span style="flex: 0 0 170px; font-weight: 500">Conversion rate</span><span style="flex: 1 1 220px">Bookings won ÷ leads, in the same period</span><span style="flex: 1 1 220px; color: #4a4e56">The first concept mixed months and overstated it</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #eceae5"><span style="flex: 0 0 170px; font-weight: 500">Drop-off %</span><span style="flex: 1 1 220px">Leads lost between two stages ÷ leads that entered</span><span style="flex: 1 1 220px; color: #4a4e56">Shows where to act, not just how many were lost</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #eceae5"><span style="flex: 0 0 170px; font-weight: 500">Days in stage</span><span style="flex: 1 1 220px">Average time a lead sits before moving on</span><span style="flex: 1 1 220px; color: #4a4e56">Catches stalls before they become drop-offs</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #eceae5"><span style="flex: 0 0 170px; font-weight: 500">Response time</span><span style="flex: 1 1 220px">Lead created to first reply</span><span style="flex: 1 1 220px; color: #4a4e56">Revenue alone hides slow replies</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid #eceae5"><span style="flex: 0 0 170px; font-weight: 500">Amount overdue</span><span style="flex: 1 1 220px">Instalments past their due date, in rupees</span><span style="flex: 1 1 220px; color: #4a4e56">Turns a count into a priority</span></div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">What to build first, and why</h3>
+<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px">
+<div style="background: #dfeaf8; border-radius: 18px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">PHASE 1</div><div style="margin-top: 10px; font-weight: 500">Operations + the shared drill-down template</div><div style="margin-top: 6px; font-size: 15px; color: #33363c">Overdue follow-ups and payments lose money every day, and the template is reused by about a dozen pages.</div></div>
+<div style="background: #f4f2ee; border-radius: 18px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">PHASE 2</div><div style="margin-top: 10px; font-weight: 500">Overview + Pipeline trend</div><div style="margin-top: 6px; font-size: 15px; color: #33363c">Needed the metric definitions agreed first; feeds the weekly leadership review.</div></div>
+<div style="background: #f4f2ee; border-radius: 18px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">PHASE 3</div><div style="margin-top: 10px; font-weight: 500">Team performance + reviews</div><div style="margin-top: 6px; font-size: 15px; color: #33363c">Ranking people on unproven data damages trust, so it waited until phases 1 and 2 proved the numbers.</div></div>
+</div>
+<p style="margin: 18px 0 0; font-size: 15px; color: #4a4e56"><strong style="color: #111316">Trade-off:</strong> period comparison, not full cohort tracking, for the first release — it answers the question with data the CRM already held. <strong style="color: #111316">Out of scope:</strong> role views, automated alerts, Leave management.</p>
+</div>
+</div>
+</section>
+
+<!-- DESIGN (tabs) -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">THE DESIGN</div>
+<h2 style="margin: 8px 0 0; max-width: 22ch; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">Each tab answers one question. Every number opens its list.</h2>
+</div>
+<div role="tablist" style="display: flex; flex-wrap: wrap; gap: 6px">
+<button data-tr="0" type="button" role="tab" class="tab" onclick="sel_tr(0)" aria-selected="true" style="border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: #111316; color: #ffffff; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Overview</button>
+<button data-tr="1" type="button" role="tab" class="tab" onclick="sel_tr(1)" aria-selected="false" style="border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Pipeline trend</button>
+<button data-tr="2" type="button" role="tab" class="tab" onclick="sel_tr(2)" aria-selected="false" style="border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Team performance</button>
+<button data-tr="3" type="button" role="tab" class="tab" onclick="sel_tr(3)" aria-selected="false" style="border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Operations</button>
+<button data-tr="4" type="button" role="tab" class="tab" onclick="sel_tr(4)" aria-selected="false" style="border: 0; border-radius: 999px; padding: 10px 18px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; font-weight: 500; cursor: pointer">Reviews</button>
+</div>
+</div>
+<div style="margin-top: 24px; font-weight: 300; font-size: clamp(22px, 2vw, 30px); letter-spacing: -0.02em"><span class="cur_tr_q">How are we doing this month?</span></div>
+<div style="margin-top: 16px; border-radius: 20px; overflow: hidden; background: #f4f2ee"><img class="cur_tr_img" src="images/a579049f2bd405ce4b8f72597960f76e.png" alt="Overview tab with numbered callouts" style="width: 100%; display: block"></div>
+</section>
+
+<!-- DISAGREED -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0">
+<h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">Where we disagreed</h2>
+<p style="margin: 14px 0 0; color: #4a4e56; font-size: 15px">The founder had the final say. I made my case, then designed his choice to work as well as it could.</p>
+</div>
+<div style="flex: 3 1 620px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; background: #f4f2ee; border-radius: 20px; padding: 8px">
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">I PROPOSED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">Keep leave management out.</strong> It answers no sales question.</div></div>
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">WE SHIPPED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">A Leave tab.</strong> Leads check who's away before reassigning a lead.</div></div>
+<div style="padding: 14px; background: #ffffff; border-radius: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">HOW I MADE IT WORK</div><div style="margin-top: 6px; font-size: 15px">Last tab, outside the daily flow, so the sales tabs still read first.</div></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; background: #f4f2ee; border-radius: 20px; padding: 8px">
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">I PROPOSED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">Sorted bars</strong> for cancellations and reviews. Angles are slow to compare.</div></div>
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">WE SHIPPED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">Donut charts.</strong> He presents the Overview in leadership reviews.</div></div>
+<div style="padding: 14px; background: #ffffff; border-radius: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">HOW I MADE IT WORK</div><div style="margin-top: 6px; font-size: 15px">Fixed legend order, and every chart opens the full list with exact numbers.</div></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; background: #f4f2ee; border-radius: 20px; padding: 8px">
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">I PROPOSED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">Rank by conversion</strong>, visible to team leads only.</div></div>
+<div style="padding: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">WE SHIPPED</div><div style="margin-top: 6px; font-size: 15px"><strong style="font-weight: 600">A revenue leaderboard</strong> with trophies, for visible competition.</div></div>
+<div style="padding: 14px; background: #ffffff; border-radius: 14px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">HOW I MADE IT WORK</div><div style="margin-top: 6px; font-size: 15px">Margin, conversion and response time sit beside revenue, so nobody reads it on revenue alone.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SUCCESS + REFLECTION -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0"><h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">How success is measured</h2></div>
+<div style="flex: 3 1 620px; min-width: 0">
+<p style="margin: 0; color: #33363c">I handed over three tabs, a dozen drill-downs and the metric definitions, ready for development. Whether it works shows up in three numbers:</p>
+<div style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px">
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">Amount overdue</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">Week on week. Operations exists to bring it down.</div></div>
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">Quote-to-booking</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">Days in Quoted should fall first, where slow follow-up costs most.</div></div>
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">Weekly review prep</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">From hours of clicking through stages to opening one tab.</div></div>
+</div>
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">What I took from it</h3>
+<p style="margin: 10px 0 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Definitions are design.</strong> The metric table mattered more than any screen — my first concept looked right while measuring the wrong thing.</p>
+<p style="margin: 10px 0 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Organise by the question, not the org chart.</strong> Role dashboards duplicated the same data three ways; three questions gave each tab one job.</p>
+<p style="margin: 10px 0 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Next:</strong> a cohort view, overdue-follow-up alerts, and a trimmed Operations view as each trip expert's start screen.</p>
+</div>
+</div>
+</section>
+
+<!-- NEXT -->
+<a class="nextcase reveal" href="habitnu.html" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; background: #ffffff; border-radius: 28px; padding: 36px 32px; text-decoration: none; color: #111316">
+<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">NEXT · 04 HABITNU</div><div style="margin-top: 6px; font-weight: 300; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -0.03em">From spreadsheets to a campaign tool that says what to do next →</div></div>
+</a>
+
+<!-- CONTACT -->
+<section class="reveal" id="contact" style="background: #ffffff; border-radius: 28px; padding: 64px 32px 56px">
+<div style="max-width: 720px; margin: 0 auto; text-align: center">
+<div style="display: inline-block; background: #f1efea; border-radius: 999px; padding: 5px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em; color: #33363c">CONTACT</div>
+<h2 style="margin: 22px 0 0; font-weight: 300; font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: -0.045em">Got a product to build? I'd like to hear about it.</h2>
+<p style="margin: 20px auto 0; max-width: 48ch; color: #4a4e56; font-size: 17px">I'm looking for a senior product design or product role on a team building something complex: AI, health, B2B. Remote, or open to relocation.</p>
+<div style="margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+<a class="pill-dark" href="mailto:vennelamanmohan@gmail.com" style="background: #111316; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 500">Email me ↗</a>
+<a class="ghost" href="https://www.linkedin.com/in/vennelamm" style="color: #111316; text-decoration: none; padding: 13px 23px; border-radius: 999px; border: 1px solid #111316; font-weight: 500">LinkedIn</a>
+<a class="ghost" href="mailto:vennelamanmohan@gmail.com?subject=R%C3%A9sum%C3%A9%20request" style="color: #111316; text-decoration: none; padding: 13px 23px; border-radius: 999px; border: 1px solid #111316; font-weight: 500">Request résumé</a>
+</div>
+</div>
+<div style="margin-top: 56px; padding-top: 18px; border-top: 1px solid #eceae5; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px; color: #6b6e75"><span>© 2026 Vennela Manmohan</span><span>Designed and built by me</span></div>
+</section>
+
+</div>
+</div>
+<script>
+(function(){
+var D=[{"name": "Overview", "q": "How are we doing this month?", "img": "images/a579049f2bd405ce4b8f72597960f76e.png", "alt": "Overview tab with numbered callouts"}, {"name": "Pipeline trend", "q": "Are we converting better than last period?", "img": "images/91465894e2ea0a8498563c43b4b9dc23.png", "alt": "Pipeline trend with numbered callouts"}, {"name": "Team performance", "q": "Who is driving the numbers?", "img": "images/b351ba82f2c59b28dd09b665ffa6d076.png", "alt": "Team performance leaderboard with numbered callouts"}, {"name": "Operations", "q": "What needs action today?", "img": "images/183baf76909298ca505f6bd866c5e3c4.png", "alt": "Operations tab with numbered callouts"}, {"name": "Reviews", "q": "What happened after the trip?", "img": "images/88ddc94481b1924f8be2ac8c408fca51.png", "alt": "Review card with numbered callouts"}];
+window.sel_tr=function(i){var d=D[i];
+document.querySelectorAll('[data-tr]').forEach(function(b){var on=+b.getAttribute('data-tr')===i;b.style.background=on?"#111316":"#f4f2ee";b.style.color=on?"#ffffff":"#111316";if(b.hasAttribute('aria-pressed'))b.setAttribute('aria-pressed',on);if(b.hasAttribute('aria-selected'))b.setAttribute('aria-selected',on);});
+var e=document.querySelector('.cur_tr_q'); if(e)e.textContent=d.q;
+var im=document.querySelector('.cur_tr_img'); if(im){im.src=d.img; im.alt=d.alt;}
+};
+})();
+</script>
+<script>
+(function(){var els=document.querySelectorAll(".reveal");
+if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}})},{threshold:0.08,rootMargin:"0px 0px -6% 0px"});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>

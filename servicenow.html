@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.svg">
+<title>When to lead, when to step back — ServiceNow case study</title>
+<meta name="description" content="Designing an AI agent that schedules, books rooms for and reschedules interviews.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>body{margin:0}
+a{color:#111316}a:hover{color:#3b6fd8}
+.pill-dark{transition:transform .2s ease,background .2s ease}
+.pill-dark:hover{transform:translateY(-2px);background:#3b6fd8 !important;color:#ffffff !important}
+.ghost{transition:background .2s ease,color .2s ease}
+.ghost:hover{background:#111316;color:#ffffff !important}
+.prints .pr{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.prints:hover .p1{transform:rotate(-14deg) translate(-70px,8px) !important}
+.prints:hover .p2{transform:rotate(2deg) translate(0,-16px) !important}
+.prints:hover .p3{transform:rotate(15deg) translate(72px,10px) !important}
+.state{transition:background .2s ease,color .2s ease}
+.state:hover{background:#eceae5}
+.nextcase{transition:background .25s ease}
+.nextcase:hover{background:#dff3e8}
+/* subtle reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #111316; padding: 14px; font-family: 'Inter Tight', system-ui, sans-serif; color: #111316; font-size: 17px; line-height: 1.6; overflow-x: clip">
+<div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px">
+
+<!-- HEADER -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; overflow: hidden">
+<nav style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 22px 32px; font-size: 15px">
+<a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #111316; font-weight: 500; font-size: 17px; letter-spacing: -0.01em">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: #111316; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600">VM</span>Vennela Manmohan</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+<a href="index.html" style="color: #111316; text-decoration: none">Work</a>
+<a href="about.html" style="color: #111316; text-decoration: none">About</a>
+<a href="mailto:vennelamanmohan@gmail.com?subject=R%C3%A9sum%C3%A9%20request" style="color: #111316; text-decoration: none">Résumé</a>
+<a class="pill-dark" href="#contact" style="background: #111316; color: #ffffff; text-decoration: none; padding: 11px 20px; border-radius: 999px; font-weight: 500">Let's talk ↗</a>
+</div>
+</nav>
+<div style="padding: 48px 32px 40px; background: #f2f7d8">
+<a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #33363c; text-decoration: none">← ALL WORK</a>
+<div style="margin-top: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em">01 · SERVICENOW · AGENTIC AI · 2025–26</div>
+<h1 style="margin: 14px 0 0; max-width: 18ch; font-weight: 300; font-size: clamp(44px, 6vw, 88px); line-height: 0.98; letter-spacing: -0.045em">When to lead, when to step back</h1>
+<p style="margin: 22px 0 0; max-width: 52ch; font-size: 20px; color: #33363c">Designing an AI agent that schedules, books rooms for and reschedules interviews, across two shipped releases.</p>
+<div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px">
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">ROLE</div><div style="margin-top: 4px; font-size: 15px">Senior Product Designer, end to end</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">SCOPE</div><div style="margin-top: 4px; font-size: 15px">Conversation design, flows, human-in-the-loop, UI</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">USERS</div><div style="margin-top: 4px; font-size: 15px">Recruiters and coordinators</div></div>
+<div style="background: rgba(255,255,255,.7); border-radius: 16px; padding: 16px 18px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">STATUS</div><div style="margin-top: 4px; font-size: 15px">Both releases shipped</div></div>
+</div>
+</div></section>
+
+<!-- TL;DR -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0"><div style="display: inline-block; background: #f1efea; border-radius: 999px; padding: 5px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #33363c">THE SHORT VERSION</div></div>
+<div style="flex: 3 1 620px; min-width: 0">
+<p style="margin: 0; font-weight: 300; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.22; letter-spacing: -0.03em">In the first release, recruiters knew the answer better than the agent, so it offered options and stepped aside. In the second, the agent knew more than any recruiter could hold in their head, so it led. <span style="font-weight: 500">An agent should lead in proportion to what it knows that the user doesn't.</span></p>
+</div>
+</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0"><h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">The problem</h2></div>
+<div style="flex: 3 1 620px; min-width: 0">
+<p style="margin: 0; color: #33363c">Interview coordination is the slowest, most manual stage of hiring. Our design research found it drives about 65% of total time-to-hire.</p>
+<div style="margin: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px">
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-weight: 300; font-size: 46px; line-height: 1; letter-spacing: -0.04em">40%</div><div style="margin-top: 8px; font-size: 14px; color: #4a4e56">of interviews rescheduled at least once</div></div>
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-weight: 300; font-size: 46px; line-height: 1; letter-spacing: -0.04em">30m–2h</div><div style="margin-top: 8px; font-size: 14px; color: #4a4e56">recruiter time per reschedule cycle</div></div>
+<div style="border: 1px solid #eceae5; border-radius: 18px; padding: 20px"><div style="font-weight: 300; font-size: 46px; line-height: 1; letter-spacing: -0.04em">~100h</div><div style="margin-top: 8px; font-size: 14px; color: #4a4e56">recruiter capacity lost each month</div></div>
+</div>
+<p style="margin: 0 0 14px; color: #33363c">Agentic scheduling was already live. Two gaps remained.</p>
+<p style="margin: 0 0 14px; color: #33363c"><strong style="color: #111316; font-weight: 600">Rooms sat outside the agent.</strong> Recruiters booked rooms by hand and pasted details into the invite. Applicants received invites with no location.</p>
+<p style="margin: 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Everything after the invite was manual.</strong> The moment anyone declined, the agent stopped and the recruiter started over. Scheduling was solved. Rescheduling wasn't.</p>
+</div>
+</div>
+</section>
+
+<!-- RELEASE 1 -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">RELEASE 1</div>
+<h2 style="margin: 8px 0 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">Room booking: the recruiter knows best</h2>
+</div>
+<div style="flex: 3 1 620px; min-width: 0">
+<div style="border-radius: 20px; overflow: hidden; margin-bottom: 36px; border: 1px solid #eceae5"><img src="images/e3720b34f318b3b39df2e36385dd5e2a.png" alt="It only asks what it can't work out" style="width: 100%; display: block"></div>
+<div style="border-radius: 20px; overflow: hidden; margin-bottom: 36px; border: 1px solid #eceae5"><img src="images/bf48672b6c720f9c4bbbad04050019c5.png" alt="Three ways in, because recruiters usually know their room" style="width: 100%; display: block"></div>
+<h3 style="margin: 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">01 · Get recruiters to their room, don't pick one for them</h3>
+<p style="margin: 10px 0 0; color: #33363c">My first version picked a room and asked for confirmation. But recruiters schedule for the same hiring managers again and again, so they usually already know the room. A picked room is a step they'd override, so the agent offers three paths instead.</p>
+<div style="margin: 20px 0; border-radius: 18px; overflow: hidden; border: 1px solid #e3e0d8">
+<div style="display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: #111316; color: #ffffff"><span style="width: 20px; height: 20px; border-radius: 50%; background: #3b6fd8; display: flex; align-items: center; justify-content: center; font-size: 11px">✦</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em">SCHEDULING AGENT</span></div>
+<div style="background: #f4f2ee; padding: 20px; font-size: 15px">
+<div style="display: inline-block; max-width: 92%; background: #ffffff; border-radius: 14px 14px 14px 4px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(17,19,22,.06)">How would you like to find a meeting room?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px">
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">I know which room</span>
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">Show me suggestions</span>
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">Skip room booking</span>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 15px; color: #4a4e56"><strong style="color: #111316">Trade-off:</strong> one extra question up front, instead of a forced recommendation the recruiter has to undo.</p>
+
+<h3 style="margin: 44px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">02 · Only ask what it can't work out</h3>
+<p style="margin: 10px 0 0; color: #33363c">Once a slot is chosen, the agent knows each interviewer's city and building. I mapped five location states and gave a question only to the ones that need it. Pick a state to see how the agent responds.</p>
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<button data-sn="0" type="button" class="state" onclick="sel_sn(0)" aria-pressed="true" style="text-align: left; border: 0; border-radius: 12px; padding: 12px 14px; min-height: 44px; background: #111316; color: #ffffff; font-family: inherit; font-size: 15px; cursor: pointer">Everyone in the same building</button>
+<button data-sn="1" type="button" class="state" onclick="sel_sn(1)" aria-pressed="false" style="text-align: left; border: 0; border-radius: 12px; padding: 12px 14px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; cursor: pointer">Same city, some buildings missing</button>
+<button data-sn="2" type="button" class="state" onclick="sel_sn(2)" aria-pressed="false" style="text-align: left; border: 0; border-radius: 12px; padding: 12px 14px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; cursor: pointer">Different buildings, same city</button>
+<button data-sn="3" type="button" class="state" onclick="sel_sn(3)" aria-pressed="false" style="text-align: left; border: 0; border-radius: 12px; padding: 12px 14px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; cursor: pointer">Different cities</button>
+<button data-sn="4" type="button" class="state" onclick="sel_sn(4)" aria-pressed="false" style="text-align: left; border: 0; border-radius: 12px; padding: 12px 14px; min-height: 44px; background: #f4f2ee; color: #111316; font-family: inherit; font-size: 15px; cursor: pointer">Location unknown</button>
+</div>
+<div style="flex: 1.4 1 300px; min-width: 0; border-radius: 18px; overflow: hidden; border: 1px solid #e3e0d8; align-self: flex-start">
+<div style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: #111316; color: #ffffff"><span style="width: 18px; height: 18px; border-radius: 50%; background: #3b6fd8; display: flex; align-items: center; justify-content: center; font-size: 10px">✦</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em">SCHEDULING AGENT</span></div>
+<div style="background: #f4f2ee; padding: 18px; font-size: 15px">
+<div style="display: inline-block; max-width: 100%; background: #ffffff; border-radius: 14px 14px 14px 4px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(17,19,22,.06)"><span class="cur_sn_msg">All the interviewers are in the same building, Argos. Here are rooms there that are free for the full hour.</span></div>
+<div style="margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56"><span class="cur_sn_tag">NO QUESTION · SAYS WHAT IT INFERRED</span></div>
+</div>
+</div>
+</div>
+<p style="margin: 18px 0 0; font-size: 15px; color: #4a4e56">When the agent infers something, it says so out loud, so bad room data is caught before the invite goes out.</p>
+
+<h3 style="margin: 44px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">03 · Room booking never holds the interview hostage</h3>
+<p style="margin: 10px 0 0; color: #33363c">Skip is there at every step. Rejecting suggestions leads to search or manual entry, never a dead end, and skipping exits straight to the invite. Every branch ends in a sent invite, with or without a room.</p>
+<div style="margin-top: 20px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/fc7cca051fb12086a382fa7c4733386a.png" alt="No questionnaire up front, and no dead ends" style="width: 100%; display: block"></div>
+<div style="margin-top: 16px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/8755a09d4b5b152be8e48f8b30253e21.png" alt="It confirms, shows its work, and waits for a yes" style="width: 100%; display: block"></div>
+</div>
+</div>
+</section>
+
+<!-- THE TURN -->
+<section class="reveal" style="background: #111316; color: #ffffff; border-radius: 28px; padding: 56px 32px; border: 1px solid #2a2c30">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #a3a6ad">THE TURN</div>
+<h2 style="margin: 10px 0 0; max-width: 22ch; font-weight: 300; font-size: clamp(32px, 3.4vw, 50px); line-height: 1.05; letter-spacing: -0.04em">Rescheduling flipped both conditions that made the humble agent right.</h2>
+<div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px">
+<div style="background: #1d1f23; border-radius: 20px; padding: 24px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #a3a6ad">ROOM BOOKING</div><div style="margin-top: 14px; font-size: 15px; color: #c9cbd0">Started by</div><div style="font-size: 20px">The recruiter</div><div style="margin-top: 12px; font-size: 15px; color: #c9cbd0">Knows more</div><div style="font-size: 20px">The recruiter</div><div style="margin-top: 12px; font-size: 15px; color: #c9cbd0">So the agent</div><div style="font-size: 20px">Offers, then steps aside</div></div>
+<div style="background: #f2f7d8; color: #111316; border-radius: 20px; padding: 24px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #4a4e56">RESCHEDULING</div><div style="margin-top: 14px; font-size: 15px; color: #4a4e56">Started by</div><div style="font-size: 20px">An event: someone declines</div><div style="margin-top: 12px; font-size: 15px; color: #4a4e56">Knows more</div><div style="font-size: 20px">The agent: every calendar, the reason, the days left</div><div style="margin-top: 12px; font-size: 15px; color: #4a4e56">So the agent</div><div style="font-size: 20px">Recommends, with reasons</div></div>
+</div>
+</section>
+
+<!-- RELEASE 2 -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">RELEASE 2</div>
+<h2 style="margin: 8px 0 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">Rescheduling: the agent knows best</h2>
+</div>
+<div style="flex: 3 1 620px; min-width: 0">
+<div style="border-radius: 20px; overflow: hidden; margin-bottom: 28px; border: 1px solid #eceae5"><img src="images/eceae343fe9f63c32e1d4cdde3cd7ee8.png" alt="The full decision flow from a decline to a sent invite" style="width: 100%; display: block"></div>
+<p style="margin: 0; color: #33363c">One loop with exactly two places where the recruiter decides. Everything else runs on its own.</p>
+<div style="margin: 20px 0 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 6px; font-size: 14px">
+<div style="background: #f4f2ee; border-radius: 12px; padding: 12px">Detect a decline</div>
+<div style="background: #f4f2ee; border-radius: 12px; padding: 12px">Gather context</div>
+<div style="background: #111316; color: #ffffff; border-radius: 12px; padding: 12px">Recruiter picks a time</div>
+<div style="background: #f4f2ee; border-radius: 12px; padding: 12px">Draft messages</div>
+<div style="background: #111316; color: #ffffff; border-radius: 12px; padding: 12px">Recruiter reviews &amp; sends</div>
+<div style="background: #f4f2ee; border-radius: 12px; padding: 12px">Execute</div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">04 · Open with context, not a question</h3>
+<p style="margin: 10px 0 0; color: #33363c">A decline arrives unannounced, so the agent's first message carries everything needed to decide, with the most common path recommended.</p>
+<div style="margin: 20px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
+<div style="border-radius: 18px; overflow: hidden; border: 1px solid #eceae5"><img src="images/7225fe26ea3ea329c93b4bd9946a3801.png" alt="Problems find the recruiter, before the recruiter finds them" style="width: 100%; display: block"></div>
+<div style="border-radius: 18px; overflow: hidden; border: 1px solid #eceae5"><img src="images/889d569a1543fbf16516fee202b5e76a.png" alt="The record tells the story before the recruiter asks" style="width: 100%; display: block"></div>
+</div>
+<div style="margin-top: 8px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/040a0157be8bd28355cfd715a84f7b04.png" alt="It opens with context and recommends one action" style="width: 100%; display: block"></div>
+<div style="margin: 20px 0 0; border-radius: 18px; overflow: hidden; border: 1px solid #e3e0d8">
+<div style="display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: #111316; color: #ffffff"><span style="width: 20px; height: 20px; border-radius: 50%; background: #3b6fd8; display: flex; align-items: center; justify-content: center; font-size: 11px">✦</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em">SCHEDULING AGENT</span></div>
+<div style="background: #f4f2ee; padding: 20px; font-size: 15px">
+<div style="display: inline-block; max-width: 92%; background: #ffffff; border-radius: 14px 14px 14px 4px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(17,19,22,.06)">Iris Martinez declined Alex Chen's Technical Interview. Still confirmed: Marcus Webb, Jordan Kim. Interview is in 4 days.</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px">
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #111316; color: #ffffff">Reschedule · recommended</span>
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">Swap interviewer</span>
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">Drop interviewer</span>
+<span style="font-size: 13px; padding: 6px 14px; border-radius: 999px; background: #ffffff; border: 1px solid #dedbd3">Keep as is</span>
+</div>
+</div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">05 · Reasons, not percentages</h3>
+<p style="margin: 10px 0 0; color: #33363c">Every new time is confirmed by the recruiter. Calendars are unreliable, a confirmation costs seconds, and a wrongly booked panel costs four people's time. What makes it fast is the slot card: each one ends in a reason a person can act on.</p>
+<div style="margin: 20px 0 0; border-radius: 18px; overflow: hidden; border: 1px solid #eceae5; background: #f4f2ee; padding: 6px; display: flex; flex-direction: column; gap: 6px; font-size: 15px">
+<div style="background: #ffffff; border-radius: 14px; padding: 14px 18px"><span style="font-weight: 600">Thu, 10:00 – 11:00</span><span style="margin-left: 10px; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: #f2f7d8; color: #3d5a0c">BEST MATCH</span><div style="color: #4a4e56; font-size: 14px">All 4 participants free. No conflicts detected.</div></div>
+<div style="background: #ffffff; border-radius: 14px; padding: 14px 18px"><span style="font-weight: 600">Thu, 17:00 – 18:00</span><div style="color: #4a4e56; font-size: 14px">All free. Late in the day; applicants prefer earlier.</div></div>
+<div style="background: #ffffff; border-radius: 14px; padding: 14px 18px"><span style="font-weight: 600">Fri, 11:30 – 12:30</span><span style="margin-left: 10px; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 999px; background: #f6e3d0; color: #8a4f17">LOW CONFIDENCE</span><div style="color: #4a4e56; font-size: 14px">Applicant availability unconfirmed.</div></div>
+</div>
+<div style="margin-top: 16px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/f2151087edea1ba95b5511d6931caa12.png" alt="Confidence per person, with a reason" style="width: 100%; display: block"></div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">06 · Show every side effect before acting</h3>
+<p style="margin: 10px 0 0; color: #33363c">A reschedule rewrites other people's calendars, so one final confirmation lists every consequence: the cancellation, the removed event, the new invites to each named person. One tap, and the recruiter has seen everything the agent will do in their name.</p>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">07 · Options shrink honestly</h3>
+<p style="margin: 10px 0 0; color: #33363c">When no slot works, the agent can widen the search once. If that fails too, the expand option disappears and the others stay. The recruiter never hits a dead end, and never sees an option that won't work.</p>
+<div style="margin-top: 16px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/866ecdc9109958cfffe6859c786e4432.png" alt="When options run out, it says so" style="width: 100%; display: block"></div>
+
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">08 · Edits reuse what already works</h3>
+<p style="margin: 10px 0 0; color: #33363c">Changing the channel or swapping an interviewer doesn't get its own logic. Switching to in person hands off to the room booking conversation; swapping an interviewer ranks the hiring team with reasons, and flags the risk too.</p>
+<div style="margin-top: 16px; border-radius: 20px; overflow: hidden; border: 1px solid #eceae5"><img src="images/4cd5a25a45c93ee240944fac841049be.png" alt="Edits reuse what already works" style="width: 100%; display: block"></div>
+</div>
+</div>
+</section>
+
+<!-- OUTCOME -->
+<section class="reveal" style="background: #ffffff; border-radius: 28px; padding: 56px 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px 64px">
+<div style="flex: 1 1 220px; min-width: 0"><h2 style="margin: 0; font-weight: 300; font-size: clamp(32px, 3vw, 44px); line-height: 1.05; letter-spacing: -0.035em">Outcome</h2></div>
+<div style="flex: 3 1 620px; min-width: 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px">
+<div style="background: #f4f2ee; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">Both releases shipped</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">Room booking went out in the Zurich release; rescheduling and editing followed.</div></div>
+<div style="background: #f4f2ee; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">One pattern, whole lifecycle</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">Scheduling, rooms, reschedule on decline, no-slot recovery and edits.</div></div>
+<div style="background: #f4f2ee; border-radius: 18px; padding: 20px"><div style="font-size: 19px; font-weight: 500">Built once, reused</div><div style="margin-top: 6px; font-size: 15px; color: #4a4e56">Room booking runs on its own and inside editing, with no second version.</div></div>
+</div>
+<h3 style="margin: 40px 0 0; font-size: 21px; font-weight: 500; letter-spacing: -0.015em">What I'd do differently</h3>
+<p style="margin: 10px 0 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Make accessibility a visible filter</strong>, not a free-text request. Skipping upfront preferences was right for speed, but it leaves accessibility to the recruiter's memory.</p>
+<p style="margin: 10px 0 0; color: #33363c"><strong style="color: #111316; font-weight: 600">Measure how often recruiters override Best match.</strong> That number would tell us when the agent could safely book on its own, and move a checkpoint from the recruiter to the agent.</p>
+</div>
+</div>
+</section>
+
+<!-- NEXT -->
+<a class="nextcase reveal" href="vera.html" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; background: #ffffff; border-radius: 28px; padding: 36px 32px; text-decoration: none; color: #111316">
+<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4a4e56">NEXT · 02 THE VERA CIRCLE</div><div style="margin-top: 6px; font-weight: 300; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: -0.03em">A calculator that starts the coaching conversation →</div></div>
+</a>
+
+<!-- CONTACT -->
+<section class="reveal" id="contact" style="background: #ffffff; border-radius: 28px; padding: 64px 32px 56px">
+<div style="max-width: 720px; margin: 0 auto; text-align: center">
+<div style="display: inline-block; background: #f1efea; border-radius: 999px; padding: 5px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.03em; color: #33363c">CONTACT</div>
+<h2 style="margin: 22px 0 0; font-weight: 300; font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: -0.045em">Got a product to build? I'd like to hear about it.</h2>
+<p style="margin: 20px auto 0; max-width: 48ch; color: #4a4e56; font-size: 17px">I'm looking for a senior product design or product role on a team building something complex: AI, health, B2B. Remote, or open to relocation.</p>
+<div style="margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+<a class="pill-dark" href="mailto:vennelamanmohan@gmail.com" style="background: #111316; color: #ffffff; text-decoration: none; padding: 14px 24px; border-radius: 999px; font-weight: 500">Email me ↗</a>
+<a class="ghost" href="https://www.linkedin.com/in/vennelamm" style="color: #111316; text-decoration: none; padding: 13px 23px; border-radius: 999px; border: 1px solid #111316; font-weight: 500">LinkedIn</a>
+<a class="ghost" href="mailto:vennelamanmohan@gmail.com?subject=R%C3%A9sum%C3%A9%20request" style="color: #111316; text-decoration: none; padding: 13px 23px; border-radius: 999px; border: 1px solid #111316; font-weight: 500">Request résumé</a>
+</div>
+</div>
+<div style="margin-top: 56px; padding-top: 18px; border-top: 1px solid #eceae5; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px; color: #6b6e75"><span>© 2026 Vennela Manmohan</span><span>Designed and built by me</span></div>
+</section>
+
+</div>
+</div>
+<script>
+(function(){
+var D=[{"label": "Everyone in the same building", "msg": "All the interviewers are in the same building, Argos. Here are rooms there that are free for the full hour.", "tag": "NO QUESTION \u00b7 SAYS WHAT IT INFERRED"}, {"label": "Same city, some buildings missing", "msg": "Two interviewers have no building on record, so I\u2019m showing free rooms across Hyderabad.", "tag": "NO QUESTION \u00b7 FLAGS THE GAP"}, {"label": "Different buildings, same city", "msg": "Your panel is split between Argos and Orion. Which building should I look in, or should I search both?", "tag": "ONE QUESTION"}, {"label": "Different cities", "msg": "Marcus is in Hyderabad and Jordan is in Pune. Book a room in one city, switch to Zoom, or skip the room?", "tag": "SHOWS WHO\u2019S WHERE \u00b7 OFFERS ZOOM"}, {"label": "Location unknown", "msg": "I don\u2019t have location data for this panel. Tell me a room name or a preference and I\u2019ll find it.", "tag": "ASKS, AND SAYS WHY"}];
+window.sel_sn=function(i){var d=D[i];
+document.querySelectorAll('[data-sn]').forEach(function(b){var on=+b.getAttribute('data-sn')===i;b.style.background=on?"#111316":"#f4f2ee";b.style.color=on?"#ffffff":"#111316";if(b.hasAttribute('aria-pressed'))b.setAttribute('aria-pressed',on);if(b.hasAttribute('aria-selected'))b.setAttribute('aria-selected',on);});
+var e=document.querySelector('.cur_sn_msg'); if(e)e.textContent=d.msg;
+var e=document.querySelector('.cur_sn_tag'); if(e)e.textContent=d.tag;
+};
+})();
+</script>
+<script>
+(function(){var els=document.querySelectorAll(".reveal");
+if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}})},{threshold:0.08,rootMargin:"0px 0px -6% 0px"});
+els.forEach(function(e){io.observe(e)});})();
+</script>
+</body>
+</html>
